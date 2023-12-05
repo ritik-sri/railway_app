@@ -1,0 +1,103 @@
+use indian_railways;
+
+db.routes.insert({name: "main-line", route: [
+    {name: "Delhi", fair: 0},
+    {name: "Mathura", fair: 20},
+    {name: "Agra", fair: 40},
+    {name: "Gwalior", fair: 60},
+    {name: "Jhansi", fair: 80},
+    // Add more stations as needed
+    {name: "Chennai", fair: 500}
+]});
+
+db.routes.insert({name: "matale-line", route: [
+    {name: "Chennai", fair: 0},
+    {name: "Tiruvallur", fair: 20},
+    {name: "Arakkonam", fair: 40},
+    {name: "Katpadi", fair: 80},
+    {name: "Jolarpettai", fair: 100},
+    // Add more stations as needed
+    {name: "Bangalore", fair: 240}
+]});
+
+db.routes.insert({name: "puttalam-line", route: [
+    {name: "Mumbai", fair: 0},
+    {name: "Thane", fair: 20},
+    {name: "Kalyan", fair: 60},
+    {name: "Nashik", fair: 80},
+    {name: "Aurangabad", fair: 100},
+    // Add more stations as needed
+    {name: "Pune", fair: 320}
+]});
+
+db.trains.insert({name: "Rajdhani Express", route: "main-line"});
+db.trains.insert({name: "Shatabdi Express", route: "main-line"});
+db.trains.insert({name: "Duronto Express", route: "main-line"});
+db.trains.insert({name: "Gatimaan Express", route: "main-line"});
+db.trains.insert({name: "Mumbai - Chennai Mail", route: "main-line"});
+// Add more trains as needed
+
+db.trains.insert({name: "Deccan Queen", route: "puttalam-line"});
+db.trains.insert({name: "Maharashtra Express", route: "puttalam-line"});
+// Add more trains as needed
+
+db.trains.insert({name: "Chennai Express (A)", route: "matale-line"});
+db.trains.insert({name: "Chennai Express (B)", route: "matale-line"});
+// Add more trains as needed
+
+db.classes.insert({name: "1st class", fareRatio: 1.1});
+db.classes.insert({name: "2nd class", fareRatio: 1.05});
+db.classes.insert({name: "3rd class", fareRatio: 1});
+
+
+
+
+
+db.schedules.insert({time:"05.00 am"});
+db.schedules.insert({time:"06.00 am"});
+db.schedules.insert({time:"09.30 am"});
+db.schedules.insert({time:"10.00 am"});
+db.schedules.insert({time:"10.30 am"});
+db.schedules.insert({time:"11.00 am"});
+db.schedules.insert({time:"12.00 pm"});
+db.schedules.insert({time:"1.30 pm"});
+db.schedules.insert({time:"02.00 pm"});
+db.schedules.insert({time:"03.30 pm"});
+db.schedules.insert({time:"04.00 pm"});
+db.schedules.insert({time:"05.30 pm"});
+db.schedules.insert({time:"07.00 pm"});
+db.schedules.insert({time:"11.00 pm"});
+
+
+
+
+db.cards.insert({card:"1234123412341234", cvc:"123" ,exp:"12/12"});
+db.cards.insert({card:"1111111111111111", cvc:"111" ,exp:"11/11"});
+
+
+
+
+db.phones.insert({phone:"0777296705", pin:"1234"});
+db.phones.insert({phone:"0776655707", pin:"1234"});
+
+
+
+
+db.employees.insert({"firstName":"Anurag","lastName":"Singh","nic":"123456789V","address":[{"street":"a","city":"b","state":"c"},{"street":"a1","city":"b1","state":"c1"}]});
+db.employees.insert({"firstName":"Neelam","lastName":"Nishad","nic":"111111111V","address":[{"street":"a","city":"b","state":"c"},{"street":"a1","city":"b1","state":"c1"}]});
+db.employees.insert({"firstName":"Saurabh","lastName":"Dey","nic":"222222222V","address":[{"street":"a","city":"b","state":"c"},{"street":"a1","city":"b1","state":"c1"}]});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

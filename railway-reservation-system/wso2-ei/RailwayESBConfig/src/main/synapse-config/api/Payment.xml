@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/payment" name="Payment" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="OPTIONS POST" protocol="http" uri-template="/{method}">
+        <inSequence>
+            <property action="remove" name="REST_URL_POSTFIX" scope="axis2"/>
+            <switch source="get-property('uri.var.method')">
+                <case regex="phone">
+                    <send>
+                        <endpoint key="MobilePaymentEndpoint"/>
+                    </send>
+                </case>
+                <case regex="card">
+                    <send>
+                        <endpoint key="CardPaymentEndpoint"/>
+                    </send>
+                </case>
+                <default/>
+            </switch>
+        </inSequence>
+        <outSequence>
+            <respond/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>
